@@ -1,6 +1,10 @@
 import functools
 import genpy
 import collections
+import sys
+if sys.version_info.major == 3 and sys.version_info.minor >= 10: # compatibility for python 3.10 and higher
+    setattr(collections, 'Sequence', collections.abc.Sequence) 
+	
 from . import numpy_msg
 
 _to_numpy = {}
